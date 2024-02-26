@@ -1,6 +1,12 @@
-const express = require('express');
+'use strict'
 
-const cors = require('cors');
+import express from 'express';
+
+import cors from 'cors';
+
+import helmet from 'helmet';
+
+import morgan from 'morgan';
 
 class Server{
 
@@ -14,11 +20,11 @@ class Server{
     }
 
     middlewares(){
-
-        this.app.use(express.static('public'));
+        this.app.use(express.urlencoded({ extended: false }));
         this.app.use(cors());
         this.app.use(express.json());
-
+        this.app.use(helmet());
+        this.app.use(morgan('dev'));
     }
 
     listen(){
@@ -33,4 +39,4 @@ class Server{
 
 }
 
-module.exports = Server;
+export default Server;
