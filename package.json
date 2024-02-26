@@ -1,0 +1,12 @@
+{
+  "name": "gestor-opiniones",
+  "version": "1.0.0",
+  "description": "API de Gestor de Opiniones | Jrevolorio2019058 | IN6BM",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Jorge Revolorio",
+  "license": "ISC"
+}
