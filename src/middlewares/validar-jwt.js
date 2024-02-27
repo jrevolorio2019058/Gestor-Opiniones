@@ -1,5 +1,7 @@
 import jwt from 'jsonwebtoken';
 
+import Usuario from '../users/user.model.js';
+
 
 export const validarJWT = async (req, res, next) => {
 
@@ -21,7 +23,7 @@ export const validarJWT = async (req, res, next) => {
 
         if (!usuario) {
             return res.status(401).json({
-                msg: 'Usuario no existe en ka base de datos'
+                msg: 'Usuario no existe en la base de datos'
             })
         }
 

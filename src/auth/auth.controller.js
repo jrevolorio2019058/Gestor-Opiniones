@@ -14,7 +14,8 @@ export const login = async (req, res) => {
         
         if (!usuario) {
             return res.status(400).json({
-            msg: "Credenciales incorrectas, Correo no existe en la base de datos"
+            msg: "Credenciales incorrectas, No se encontro Correo o Nombre de usuario en la Base de datos"
+
         });
         }
 
@@ -27,9 +28,13 @@ export const login = async (req, res) => {
         }
 
         if (usuario && validPassword) {
-            const usuario = new Usuario({ state: true });
 
-            await usuario.save();
+            await Usuario.findOneAndUpdate(
+                {email: usuario.email},
+                {$set: {state: true}},
+                {new: true},
+                console.log(req.body)
+            );
         }
 
         const token = await generarJWT(usuario.id);
