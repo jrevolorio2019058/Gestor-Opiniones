@@ -3,7 +3,8 @@ import { Router } from "express";
 import { check } from "express-validator";
 
 import {
-    usuariosPost
+    usuariosPost,
+    usuarioPut
 } from "./user.controller.js";
 
 import {
@@ -12,7 +13,7 @@ import {
 
 import { validarCampos } from "../middlewares/validar-campos.js";
 
-/*import { validarJWT } from "../middlewares/validar-jwt.js";*/
+import { validarJWT } from "../middlewares/validar-jwt.js";
 
 const router = Router();
 
@@ -27,6 +28,14 @@ router.post(
         check("email").custom(existenteEmail),
         validarCampos
     ], usuariosPost
+);
+
+router.put(
+    "/",
+    [
+        validarJWT,
+        validarCampos
+    ], usuarioPut
 );
 
 export default router;

@@ -10,7 +10,7 @@ export const validarJWT = async (req, res, next) => {
     if (!token) {
         
         return res.status(400).json({
-            msg: "No hay token en la petición"
+            msg: "En la petición no hay token"
         });
 
     }
@@ -27,13 +27,15 @@ export const validarJWT = async (req, res, next) => {
             })
         }
 
-        if (!usuario.estado) {
+        if (!usuario.state) {
             return res.status(401).json({
                 msg: 'Token no valido | State User: false'
             })
         }
 
         req.usuario = usuario;
+
+        req.usuarioId = await Usuario.findById(uid);
 
         next();
         
