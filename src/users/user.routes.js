@@ -4,14 +4,15 @@ import { check } from "express-validator";
 
 import {
     usuariosPost,
-    usuarioPut
+    usuarioPut,
+    usuarioDelete
 } from "./user.controller.js";
 
 import {
     existenteEmail
 } from "../helpers/db-validator.js";
 
-import { validarCampos } from "../middlewares/validar-campos.js";
+import { validarCampos, validacionPassword } from "../middlewares/validar-campos.js";
 
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
@@ -34,8 +35,17 @@ router.put(
     "/",
     [
         validarJWT,
+        validacionPassword,
         validarCampos
     ], usuarioPut
 );
+
+router.delete(
+    "/",
+    [
+        validarJWT,
+        validarCampos
+    ], usuarioDelete
+)
 
 export default router;

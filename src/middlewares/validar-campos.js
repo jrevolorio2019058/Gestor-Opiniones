@@ -11,3 +11,19 @@ export const validarCampos = (req, res, next) => {
     next();
 
 }
+
+export const validacionPassword = (req, res, next) =>{
+
+    const {password, passwordConfirmation} = req.body;
+
+    if(password != passwordConfirmation){
+
+        return res.status(400).json({
+            msg: `La confirmación ${passwordConfirmation} no coincide con la contraseña ${password}`
+        });
+
+    }
+
+    next();
+
+}
