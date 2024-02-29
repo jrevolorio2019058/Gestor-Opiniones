@@ -27,7 +27,7 @@ export const usuarioPut = async (req, res) => {
 
     const id_Usuario = req.usuarioId._id;
 
-    const {_id, email, img, state, ...resto} = req.body;
+    const {_id, img, state, ...resto} = req.body;
 
     await User.findByIdAndUpdate(id_Usuario, resto);
 
