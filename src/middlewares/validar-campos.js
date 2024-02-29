@@ -66,21 +66,25 @@ export const userNameANDEmailIsBoth = (req, res, next) =>{
 
 }
 
-export const ownPublication = (req, res, next) =>{
+export const ownPublication = async (req, res, next) =>{
 
     const { id } = req.params;
 
     const usuarioId = req.usuario._id;
 
-    const validationId = Publication.findOne({ _id: id });
+    const validationId = await Publication.findById(id);
 
-    const objetoConDatos = validationId.idCreador;
+    if(!validationId){
 
-    const validationPublication = Publication.findOne({ objetoConDatos: usuarioId });
-    
-    console.log(objetoConDatos);
+        return res.status(404).json({
+            msg: `La publicación con el id: ${id} no se a encontrado`
+        })
 
-    if(!validationPublication){
+    }
+
+
+
+    if(validationId.idCreador != usuarioId){
 
         return res.status(422).json({
             msg: `${req.usuario.userName} no puede modificar la publicación de otro.`
