@@ -3,16 +3,16 @@ import { Router } from "express";
 import { check } from "express-validator";
 
 import {
-    usuariosPost,
+    usuarioDelete,
     usuarioPut,
-    usuarioDelete
+    usuariosPost
 } from "./user.controller.js";
 
 import {
-    existenteEmail
+    existenteEmail,
 } from "../helpers/db-validator.js";
 
-import { validarCampos, validacionPassword } from "../middlewares/validar-campos.js";
+import { validacionPassword, validarCampos } from "../middlewares/validar-campos.js";
 
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
