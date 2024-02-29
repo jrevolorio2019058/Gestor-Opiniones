@@ -35,6 +35,13 @@ const PublicationSchema = mongoose.Schema({
         type: [String],
         default: []
 
+    },
+
+    estadoPublicacion: {
+
+        type: Boolean,
+        default: true
+
     }
 
 });

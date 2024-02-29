@@ -3,13 +3,12 @@ import { Router } from "express";
 import { check } from "express-validator";
 
 import {
-    
     publicacionPost,
-    publicacionPut
-
+    publicacionPut,
+    publicacionesGet
 } from "./publication.controller.js";
 
-import { validarCampos} from "../middlewares/validar-campos.js";
+import { validarCampos } from "../middlewares/validar-campos.js";
 
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
@@ -29,6 +28,8 @@ router.post(
     ], publicacionPost
 
 );
+
+router.get("/", publicacionesGet);
 
 router.put(
 

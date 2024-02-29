@@ -1,5 +1,7 @@
 import { validationResult } from "express-validator";
 
+import bcryptjs from 'bcryptjs';
+
 import Publication from "../publications/publication.model.js";
 
 export const validarCampos = (req, res, next) => {
@@ -16,12 +18,14 @@ export const validarCampos = (req, res, next) => {
 
 export const validacionPassword = (req, res, next) =>{
 
-    const {password, passwordConfirmation} = req.body;
+    const { oldPassword } = req.body;
 
-    if(password != passwordConfirmation){
+    const confirmationOldPassword = bcryptjs.compareSync(oldPassword, req.usuario.password);
+
+    if(!confirmationOldPassword){
 
         return res.status(400).json({
-            msg: `La confirmación ${passwordConfirmation} no coincide con la contraseña ${password}`
+            msg: `La constraseña ${oldPassword} no concide con la contraseña guardada en la base de datos.`
         });
 
     }

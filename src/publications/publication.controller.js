@@ -22,6 +22,28 @@ export const publicacionPost = async (req, res) => {
 
 }
 
+export const publicacionesGet = async (req, res = response) => {
+    
+    const { limite, desde } = req.query;
+
+    const query = { estadoPublicacion: true };
+
+    const [total, publicaciones] = await Promise.all([
+
+        Publication.countDocuments(query),
+        Publication.find(query)
+            .skip(Number(desde))
+            .limit(Number(limite))
+
+    ]);
+
+    res.status(200).json({
+        total,
+        publicaciones
+    })
+
+}
+
 export const publicacionPut = async(req, res) => {
 
     const { id } = req.params;
