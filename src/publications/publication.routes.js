@@ -8,7 +8,7 @@ import {
     publicacionesGet
 } from "./publication.controller.js";
 
-import { validarCampos } from "../middlewares/validar-campos.js";
+import { ownPublication, validarCampos } from "../middlewares/validar-campos.js";
 
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
@@ -36,6 +36,7 @@ router.put(
     "/:id",
     [
         validarJWT,
+        ownPublication,
         validarCampos
     ], publicacionPut
 

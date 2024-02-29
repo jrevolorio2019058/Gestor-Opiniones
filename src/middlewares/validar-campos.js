@@ -65,3 +65,29 @@ export const userNameANDEmailIsBoth = (req, res, next) =>{
     next();
 
 }
+
+export const ownPublication = (req, res, next) =>{
+
+    const { id } = req.params;
+
+    const usuarioId = req.usuario._id;
+
+    const validationId = Publication.findOne({ _id: id });
+
+    const objetoConDatos = validationId.idCreador;
+
+    const validationPublication = Publication.findOne({ objetoConDatos: usuarioId });
+    
+    console.log(objetoConDatos);
+
+    if(!validationPublication){
+
+        return res.status(422).json({
+            msg: `${req.usuario.userName} no puede modificar la publicación de otro.`
+        });
+
+    }
+
+    next();
+
+}
