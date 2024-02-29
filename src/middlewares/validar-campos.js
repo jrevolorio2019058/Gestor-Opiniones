@@ -27,3 +27,35 @@ export const validacionPassword = (req, res, next) =>{
     next();
 
 }
+
+export const userNameANDEmailEmpty = (req, res, next) =>{
+
+    const {userName, email} = req.body;
+
+    if(email == null && userName == null){
+
+        return res.status(422).json({
+            msg: `Se necesita de un email o de una usuario`
+        });
+
+    }
+
+    next();
+
+}
+
+export const userNameANDEmailIsBoth = (req, res, next) =>{
+
+    const {userName, email} = req.body;
+
+    if(email != null && userName != null){
+
+        return res.status(422).json({
+            msg: `No se puede ingresar userName: ${userName} y email: ${email} al mismo tiempo.`
+        });
+
+    }
+
+    next();
+
+}
