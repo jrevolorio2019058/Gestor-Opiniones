@@ -1,5 +1,7 @@
 import { validationResult } from "express-validator";
 
+import Publication from "../publications/publication.model.js";
+
 export const validarCampos = (req, res, next) => {
 
     const error = validationResult(req);

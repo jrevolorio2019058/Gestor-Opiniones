@@ -2,7 +2,6 @@ import bcryptjs from 'bcryptjs';
 
 import User from './user.model.js';
 
-
 export const usuariosPost = async (req, res) => {
 
     const { userName, email, password } = req.body;

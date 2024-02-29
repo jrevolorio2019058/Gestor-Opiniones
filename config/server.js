@@ -14,6 +14,8 @@ import userRoutes from '../src/users/user.routes.js';
 
 import authRoutes from '../src/auth/auth.routes.js';
 
+import publicationRoutes from '../src/publications/publication.routes.js';
+
 class Server{
 
     constructor(){
@@ -22,6 +24,7 @@ class Server{
         this.port = process.env.PORT;
         this.usuarioPath = '/gestorOpinionesApi/v1/users'
         this.authPath = '/gestorOpinionesApi/v1/auth'
+        this.publicacionPath = '/gestorOpinionesApi/v1/publications'
 
         this.middlewares();
         this.conectarDB();
@@ -44,6 +47,7 @@ class Server{
     routes() {
         this.app.use(this.usuarioPath, userRoutes);
         this.app.use(this.authPath, authRoutes);
+        this.app.use(this.publicacionPath, publicationRoutes);
     }
 
     listen(){
