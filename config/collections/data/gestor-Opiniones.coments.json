@@ -1,0 +1,33 @@
+[{
+  "_id": {
+    "$oid": "65e1d5685ff48e935f62afa1"
+  },
+  "nameCreator": "Jorge Revolorio",
+  "text": "Que gusto que te unieras a la comunidad amigo!",
+  "idPublication": "65e1d5285ff48e935f62af95",
+  "idAuthor": "65e1d4b85ff48e935f62af8b",
+  "comentaryState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e1dd7765959bd1b538f5b7"
+  },
+  "nameCreator": "El perrito Lopez",
+  "text": "Que gusto que te unieras a la comunidad amigo!",
+  "idPublication": "65e1d5285ff48e935f62af95",
+  "idAuthor": "65e1d4d35ff48e935f62af8e",
+  "comentaryState": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e1e00ea45595293f98f566"
+  },
+  "nameCreator": "Jorge Revolorio",
+  "text": "Ya no me siento bien",
+  "idPublication": "65e1df74a45595293f98f55e",
+  "idAuthor": "65e1d4b85ff48e935f62af8b",
+  "comentaryState": true,
+  "__v": 0
+}]

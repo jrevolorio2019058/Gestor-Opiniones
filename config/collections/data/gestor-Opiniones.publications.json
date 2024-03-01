@@ -1,0 +1,29 @@
+[{
+  "_id": {
+    "$oid": "65e1d5285ff48e935f62af95"
+  },
+  "tittle": "Cree mi segunda publicación Max",
+  "category": "General",
+  "mainText": "Esta es creado mi segunda publicación Max",
+  "idCreador": "65e1d4d35ff48e935f62af8e",
+  "idComentario": [
+    "65e1d5685ff48e935f62afa1",
+    "65e1dd7765959bd1b538f5b7"
+  ],
+  "estadoPublicacion": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e1df74a45595293f98f55e"
+  },
+  "tittle": "Hola Existo",
+  "category": "Sentimiento",
+  "mainText": "Me siento perfecto",
+  "idCreador": "65e1d4b85ff48e935f62af8b",
+  "idComentario": [
+    "65e1e00ea45595293f98f566"
+  ],
+  "estadoPublicacion": true,
+  "__v": 0
+}]

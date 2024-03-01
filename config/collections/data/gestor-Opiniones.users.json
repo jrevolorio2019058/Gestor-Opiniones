@@ -1,0 +1,30 @@
+[{
+  "_id": {
+    "$oid": "65e1d4a95ff48e935f62af88"
+  },
+  "userName": "Fernando Cañas",
+  "email": "fcañas@kinal.edu.gt",
+  "password": "$2a$10$ao7f4.1cFb1B7Yjp0ppgKen7gJSaj3Ci/Q0HJhg/xrZerYF21CYCG",
+  "state": false,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e1d4b85ff48e935f62af8b"
+  },
+  "userName": "Jorge Revolorio",
+  "email": "jrevolorio@kinal.edu.gt",
+  "password": "$2a$10$ExectXhX9ySFIJNC4xzdy.b7a0ODvNlh6H1yjB0nZsR8X4r0I9Qki",
+  "state": true,
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "65e1d4d35ff48e935f62af8e"
+  },
+  "userName": "El perrito Lopez",
+  "email": "alopz@kinal.edu.gt",
+  "password": "$2a$10$lJVmuRZKhRIvb2gUDh6Mq.nmYueYWV/ydnS85S5vdI1UCQRHGygP2",
+  "state": true,
+  "__v": 0
+}]

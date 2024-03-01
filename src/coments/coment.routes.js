@@ -2,13 +2,14 @@ import { Router } from "express";
 
 import { check } from "express-validator";
 
-import{
-
-    comentPost
-
+import {
+    comentDelete,
+    comentGet,
+    comentPost,
+    comentPut
 } from "./coment.controller.js";
 
-import { validarCampos, idExistente } from "../middlewares/validar-campos.js";
+import { idExistente, ownComent, validarCampos } from "../middlewares/validar-campos.js";
 
 import { validarJWT } from "../middlewares/validar-jwt.js";
 
@@ -25,6 +26,30 @@ router.post(
         }),
         validarCampos
     ],comentPost
+);
+
+router.get("/", comentGet);
+
+router.put(
+
+    "/:id",
+    [
+        validarJWT,
+        ownComent,
+        validarCampos
+    ], comentPut
+
+);
+
+router.delete(
+
+    "/:id",
+    [
+        validarJWT,
+        ownComent,
+        validarCampos
+    ], comentDelete
+
 );
 
 export default router;

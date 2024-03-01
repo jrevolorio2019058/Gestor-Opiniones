@@ -117,3 +117,33 @@ export const idExistente = async (req, res, next) =>{
     next();
 
 }
+
+export const ownComent = async (req, res, next) =>{
+
+    const { id } = req.params;
+
+    const usuarioId = req.usuario._id;
+
+    const validationId = await Coment.findById(id);
+
+    if(!validationId){
+
+        return res.status(404).json({
+            msg: `La publicación con el id: ${id} no se a encontrado`
+        })
+
+    }
+
+
+
+    if(validationId.idAuthor != usuarioId){
+
+        return res.status(422).json({
+            msg: `${req.usuario.userName} no puedes Modificar/Eliminar un comentario de otro.`
+        });
+
+    }
+
+    next();
+
+}

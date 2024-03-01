@@ -1,0 +1,418 @@
+{
+	"info": {
+		"_postman_id": "191e135b-d4d3-41b3-8105-3be5270423cb",
+		"name": "gestion-Opiniones",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32787267"
+	},
+	"item": [
+		{
+			"name": "Registrer",
+			"item": [
+				{
+					"name": "registro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"El perrito Lopez\",\r\n    \"email\": \"alopz@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinionesApi/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinionesApi",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"El perrito Lopez\",\r\n    //\"email\": \"jrevolorio@kinal.edu.gt\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinionesApi/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinionesApi",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "editarUsuario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUwYjIxZGU1MWE3OWEzNGQwYzk2ZDciLCJpYXQiOjE3MDkyMjU1OTgsImV4cCI6MTcwOTIzMjc5OH0.mrYKkL2l-oHBJBdVW2_RhvcaaSrvW0wFbnoFXx7ZZ9g",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userName\": \"Abraham Revolorio\",\r\n    \"oldPassword\": \"123456789\",\r\n    \"password\": \"123456789\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinionesApi/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinionesApi",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarUsuario",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUwYjIxN2U1MWE3OWEzNGQwYzk2ZDQiLCJpYXQiOjE3MDkyMjQ1MjUsImV4cCI6MTcwOTIzMTcyNX0.CvdOhdvFuLfJr1j_llkhTqvDQDE3yVhrEV9x8w5b1i8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinionesApi/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinionesApi",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Publications",
+			"item": [
+				{
+					"name": "agregarPublicación",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZDRkMzVmZjQ4ZTkzNWY2MmFmOGUiLCJpYXQiOjE3MDkyOTg5NDIsImV4cCI6MTcwOTMwNjE0Mn0.Ns1wJKst0M6Bd9XICWh_SUG5azIr9MgCXZtK4ICJFr8",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tittle\": \"Cree mi segunda publicación Max\",\r\n    \"category\": \"General\",\r\n    \"mainText\": \"Esta es creado mi segunda publicación Max\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinionesApi/v1/publications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinionesApi",
+								"v1",
+								"publications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editarPublicación",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUwZjYwODljMGQxMDdjYjJiOGYwMGEiLCJpYXQiOjE3MDkyNDIwMjgsImV4cCI6MTcwOTI0OTIyOH0.CCL5tCFLGcubRSBD_qTHU4mM9_wJ2NPmSyLSIpPu0Zo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mainText\": \"Actualize por primera vez mi primera publicación\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinionesApi/v1/publications/65e0f6519c0d107cb2b8f017",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinionesApi",
+								"v1",
+								"publications",
+								"65e0f6519c0d107cb2b8f017"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarPublicación",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUwZjYxNTljMGQxMDdjYjJiOGYwMGQiLCJpYXQiOjE3MDkyNTE5OTcsImV4cCI6MTcwOTI1OTE5N30.69eLD6NsBTulSD03ovQGCVX2WS0GoA9CXXAirKxLcW0",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinionesApi/v1/publications/65e0f6409c0d107cb2b8f013",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinionesApi",
+								"v1",
+								"publications",
+								"65e0f6409c0d107cb2b8f013"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Coments",
+			"item": [
+				{
+					"name": "agregarComentario",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZDRkMzVmZjQ4ZTkzNWY2MmFmOGUiLCJpYXQiOjE3MDkzMDA1NjUsImV4cCI6MTcwOTMwNzc2NX0.hTvsQcyCOsU1aslIyDyDx4OktHM1rFiUvvc586JnL5o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"Que gusto que te unieras a la comunidad amigo!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinionesApi/v1/coments/65e1d5285ff48e935f62af95",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinionesApi",
+								"v1",
+								"coments",
+								"65e1d5285ff48e935f62af95"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "editarComentario",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZDRkMzVmZjQ4ZTkzNWY2MmFmOGUiLCJpYXQiOjE3MDkzMDA1NjUsImV4cCI6MTcwOTMwNzc2NX0.hTvsQcyCOsU1aslIyDyDx4OktHM1rFiUvvc586JnL5o",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"text\": \"Estoy editando mi comentario\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinionesApi/v1/coments/65e1d5685ff48e935f62afa1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinionesApi",
+								"v1",
+								"coments",
+								"65e1d5685ff48e935f62afa1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminarComentario",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NWUxZDRkMzVmZjQ4ZTkzNWY2MmFmOGUiLCJpYXQiOjE3MDkzMDEzMzAsImV4cCI6MTcwOTMwODUzMH0.cZ66rGZrALsHI9dTSiyvG4E16pVLOGxfAyK0CMVBjiU",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinionesApi/v1/coments/65e1dd7765959bd1b538f5b7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinionesApi",
+								"v1",
+								"coments",
+								"65e1dd7765959bd1b538f5b7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Watch",
+			"item": [
+				{
+					"name": "verPublicaciones",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinionesApi/v1/publications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinionesApi",
+								"v1",
+								"publications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "verComentarios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/gestorOpinionesApi/v1/coments",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"gestorOpinionesApi",
+								"v1",
+								"coments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
