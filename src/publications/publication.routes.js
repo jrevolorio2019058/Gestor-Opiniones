@@ -5,7 +5,8 @@ import { check } from "express-validator";
 import {
     publicacionPost,
     publicacionPut,
-    publicacionesGet
+    publicacionesGet,
+    publicacionDelete
 } from "./publication.controller.js";
 
 import { ownPublication, validarCampos } from "../middlewares/validar-campos.js";
@@ -39,6 +40,17 @@ router.put(
         ownPublication,
         validarCampos
     ], publicacionPut
+
+);
+
+router.delete(
+
+    "/:id",
+    [
+        validarJWT,
+        ownPublication,
+        validarCampos
+    ], publicacionDelete
 
 );
 

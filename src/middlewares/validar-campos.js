@@ -87,7 +87,7 @@ export const ownPublication = async (req, res, next) =>{
     if(validationId.idCreador != usuarioId){
 
         return res.status(422).json({
-            msg: `${req.usuario.userName} no puede modificar la publicación de otro.`
+            msg: `${req.usuario.userName} no puedes Modificar/Eliminar la publicación de otro.`
         });
 
     }

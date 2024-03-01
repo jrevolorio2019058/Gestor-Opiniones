@@ -63,3 +63,18 @@ export const publicacionPut = async(req, res) => {
     })
 
 }
+
+export const publicacionDelete = async (req, res) => {
+
+    const {id} = req.params;
+
+    await Publication.findByIdAndUpdate(id,{estadoPublicacion: false})
+
+    const publicacion = await Publication.findOne({_id:id});
+
+    res.status(200).json({
+
+        msg: `${req.usuario.userName} haz eliminado correctamente la publicación ${publicacion.tittle}`
+    });
+
+}
