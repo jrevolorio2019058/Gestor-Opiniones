@@ -4,6 +4,8 @@ import bcryptjs from 'bcryptjs';
 
 import Publication from "../publications/publication.model.js";
 
+import Coment from "../coments/coment.model.js";
+
 export const validarCampos = (req, res, next) => {
 
     const error = validationResult(req);
@@ -89,6 +91,26 @@ export const ownPublication = async (req, res, next) =>{
         return res.status(422).json({
             msg: `${req.usuario.userName} no puedes Modificar/Eliminar la publicación de otro.`
         });
+
+    }
+
+    next();
+
+}
+
+export const idExistente = async (req, res, next) =>{
+
+    const {id} = req.params;
+
+    await Publication.findById(id);
+
+    const validationId = await Publication.findOne({_id: id});
+
+    if(!validationId){
+
+        return res.status(404).json({
+            msg: `La publicación con el id: ${id} no se a encontrado`
+        })
 
     }
 

@@ -16,6 +16,8 @@ import authRoutes from '../src/auth/auth.routes.js';
 
 import publicationRoutes from '../src/publications/publication.routes.js';
 
+import comentRoutes from '../src/coments/coment.routes.js';
+
 class Server{
 
     constructor(){
@@ -25,6 +27,7 @@ class Server{
         this.usuarioPath = '/gestorOpinionesApi/v1/users'
         this.authPath = '/gestorOpinionesApi/v1/auth'
         this.publicacionPath = '/gestorOpinionesApi/v1/publications'
+        this.comentPath = '/gestorOpinionesApi/v1/coments'
 
         this.middlewares();
         this.conectarDB();
@@ -48,6 +51,7 @@ class Server{
         this.app.use(this.usuarioPath, userRoutes);
         this.app.use(this.authPath, authRoutes);
         this.app.use(this.publicacionPath, publicationRoutes);
+        this.app.use(this.comentPath, comentRoutes);
     }
 
     listen(){

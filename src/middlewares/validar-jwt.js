@@ -10,7 +10,7 @@ export const validarJWT = async (req, res, next) => {
     if (!token) {
         
         return res.status(400).json({
-            msg: "En la petición no hay token"
+            msg: "En la petición no hay token | Logearse para conseguír token"
         });
 
     }
@@ -42,7 +42,7 @@ export const validarJWT = async (req, res, next) => {
     } catch (e) {
         console.log(e),
             res.status(401).json({
-                msg: "Token no válido"
+                msg: "Token no válido | Se a vencido tu token, vuelve a logearte para conseguír otro"
             });
     }
 
